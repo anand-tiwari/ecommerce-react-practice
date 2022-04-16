@@ -1,0 +1,163 @@
+.header-section {
+    display: grid;
+    grid-template-columns: min-content auto min-content min-content;
+    align-items: center;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.24);
+}
+
+.header-fix {
+    position: fixed;
+    top: 0;
+    width: 100vw !important;
+    z-index: 20;
+}
+
+.logo {
+    padding: 0 2rem;
+}
+
+.page-link {
+    display: flex;
+    list-style: none;
+    padding: 0 1rem;
+}
+
+.page-link .item:not(:last-child) {
+    padding-right: 1rem;
+}
+
+.search-box {
+    display: flex;
+}
+
+.user {
+    padding: 0 1rem;
+    width: 10rem;
+}
+
+
+/* input box  css */
+
+.field {
+    display: flex;
+    /* flex-flow: column-reverse;
+     */
+    /* margin-bottom: 1em; */
+    position: relative;
+}
+
+.header-section label,
+.header-section input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+}
+
+.header-section input {
+    font-size: 1.5em;
+    border: 0;
+    border-bottom: 0.1rem solid #ccc;
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0;
+    cursor: text;
+    height: 100%;
+}
+
+.header-section input:focus {
+    outline: 0;
+    border-bottom: 0.1rem solid #666;
+}
+
+.header-section label {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.header-section input:placeholder-shown+label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: left bottom;
+    transform: translate(0, 2.125rem) scale(1.5);
+}
+
+
+/**
+  * By default, the placeholder should be transparent. Also, it should
+  * inherit the transition.
+  */
+
+ ::-webkit-input-placeholder {
+    opacity: 1;
+    transition: inherit;
+}
+
+
+/**
+  * Show the placeholder when the input is focused.
+  */
+
+.header-section input:focus::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+
+/**
+  * When the element is focused, remove the label transform.
+  * Also, do this when the placeholder is _not_ shown, i.e. when
+  * there's something in the input at all.
+  */
+
+input:not(:placeholder-shown)+label,
+input:focus+label {
+    transform: translate(0, 0) scale(1);
+    cursor: pointer;
+}
+
+.header-section .input-effect~.focus-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: blue;
+    transition: 0.4s;
+}
+
+.header-section .input-effect:focus~.focus-border {
+    width: 100%;
+    transition: 0.4s;
+}
+
+
+/* search button css */
+
+.search__button {
+    background-color: #fff;
+    height: 5rem;
+    width: 10rem;
+    overflow: hidden;
+    /* flex: 0 0 100%; */
+}
+
+.search__button--btn {
+    align-items: center;
+    color: #495057;
+    cursor: pointer;
+    display: flex;
+    font-weight: 400;
+    height: 100%;
+    letter-spacing: .2px;
+    text-align: left;
+    text-rendering: optimizeLegibility;
+    width: 100%;
+    justify-content: center;
+    font-size: large;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+}
