@@ -1,7 +1,7 @@
 import { useProducts } from '../../context/product/context'
 import './ProductCard.css'
 
-export default function ({product}) {
+export default function ProductCard ({ product }) {
 
     const { addTocard, productState}  = useProducts()
 
@@ -13,7 +13,7 @@ export default function ({product}) {
          <div className="product__item">
                 <div className="card__container card__container_vertical">
                     <div className="card__imagecontainer card__imagecontainer_vertical">
-                        <img src={product.photos && product.photos[0].secure_url} />
+                        <img alt="product" src={product.photos && product.photos[0].secure_url} />
                         <span className="badge badge-trending">{product.tag}</span>
                     </div>
                     <div className="card__content card__content_vertical">

@@ -39,7 +39,7 @@ export default function ProductProvider({ children }) {
     const userLogin = async(data) => {
         const response = await postData('login', data)
         productDispatch({ type: 'update_login_status', payload: response.user.email && true })
-        productDispatch({ type: 'add_user', payload: response.user._id})
+        productDispatch({ type: 'add_user', payload: response.user._id })
         localStorage.setItem('token', JSON.stringify(response.token))
         localStorage.setItem('user', JSON.stringify(response.user))
         goToComponent()
@@ -47,7 +47,7 @@ export default function ProductProvider({ children }) {
 
     const userLogout = async() => {
         const response = await getData('logout')
-        productDispatch({ type: 'update_login_status', payload: false })
+        productDispatch({ type: 'update_login_status', payload: response.user.email && false })
         localStorage.removeItem('token')
     }
 
@@ -63,11 +63,11 @@ export default function ProductProvider({ children }) {
         console.log(response)
     }
 
-    const fetchCartsInfo = async () => {
+    const fetchCartsInfo = async() => {
         const response = await getData('user/cart', {
             userId: productState.userId || JSON.parse(localStorage.getItem('user'))._id
         })
-        productDispatch({type: 'update_cards', payload: response})
+        productDispatch({ type: 'update_cards', payload: response })
         console.log(response)
     }
 
@@ -76,8 +76,8 @@ export default function ProductProvider({ children }) {
         productDispatch({ type: 'update_login_status', payload: localStorage.getItem('token') && true })
     }, [])
 
-    return (
-        <Context.Provider value = {
+    return ( <
+        Context.Provider value = {
             {
                 productState,
                 productDispatch,
@@ -86,9 +86,9 @@ export default function ProductProvider({ children }) {
                 userSingup,
                 addTocard,
                 fetchCartsInfo
-            }}>
-            { children }
-        </Context.Provider>
+            }
+        } > { children } <
+        /Context.Provider>
     )
 }
 

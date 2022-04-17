@@ -7,7 +7,7 @@ export default function Cart () {
 
     useEffect(()=>{
         fetchCartsInfo()
-    },[])
+    },[fetchCartsInfo])
     return ( <div>
             Cart page
 
