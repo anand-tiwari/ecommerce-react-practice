@@ -1,21 +1,13 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import logo from "./logo.png";
-
-import { useProducts } from './context/product/context'
 import Header from "./components/Header/Header";
-import Products from "./components/products/Product";
+import Products from "./pages/Product/Product";
 import Cart from "./pages/Cart/Cart";
-import Wishlist from "./components/Wishlist/Wishlist";
+import Wishlist from "./pages/Wishlist/Wishlist";
 import Login from "./pages/Login/Login";
 import RequireAuth from "./RequireAuth";
 
 function Home() {
-
-  const { productState} = useProducts()
-
-  // console.log(productState)
-
   return (
     <>
       <main>
