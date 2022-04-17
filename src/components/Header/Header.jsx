@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useProducts } from "../../context/product/context"
 import { Link } from "react-router-dom";
 
@@ -6,7 +5,7 @@ import './Header.css'
 
 export default function Header() {
     
-    const {productState, userLogin, userSingup, userLogout} = useProducts();
+    const {productState, userLogin, userLogout} = useProducts();
 
     function login() {
         userLogin({email:"anandtiwari192@gmail.com", password:"test123"})
@@ -16,10 +15,10 @@ export default function Header() {
         userLogout()
     }
 
-    function signup() {
+/*     function signup() {
        // userSingup({firstName: "anand", lastName:"tiwari", email:"anandtiwari192@gmail.com", password:"test"})
        userSingup({name: "anand", email:"anandtiwari192@gmail.com", password:"test123"})
-    }
+    } */
 
     return (
         
