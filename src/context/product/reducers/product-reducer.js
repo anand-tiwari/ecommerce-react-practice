@@ -5,6 +5,10 @@ export const ProductReducer = (state, action) => {
             return {...state, products: payload }
         case "update_login_status":
             return {...state, isLoggedIn: payload }
+        case "add_user":
+            return {...state, userId: payload }
+        case "update_cards":
+            return {...state, carts: payload.carts }
         default:
             return state;
     }
@@ -12,6 +16,8 @@ export const ProductReducer = (state, action) => {
 }
 
 export const initialState = {
-    products: [{ id: 1, name: 'anand' }],
-    isLoggedIn: false
+    products: [],
+    carts: [],
+    isLoggedIn: false,
+    userId: ''
 }

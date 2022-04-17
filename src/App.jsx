@@ -4,9 +4,9 @@ import logo from "./logo.png";
 
 import { useProducts } from './context/product/context'
 import Header from "./components/Header/Header";
-import Products from "./components/products/Product";
+import Products from "./pages/Product/Product";
 import Cart from "./pages/Cart/Cart";
-import Wishlist from "./components/Wishlist/Wishlist";
+import Wishlist from "./pages/Wishlist/Wishlist";
 import Login from "./pages/Login/Login";
 import RequireAuth from "./RequireAuth";
 
